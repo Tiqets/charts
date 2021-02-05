@@ -178,7 +178,11 @@ spec:
                 name: "{{ include "airflow.fullname" . }}-env"
           env:
             {{- include "airflow.mapenvsecrets" . | indent 12 }}
-          #volumeMounts:
+          resources:
+            {{- toYaml .Values.scheduler.resources | nindent 12 }}
+          volumeMounts:
+            - name: connections
+              mountPath: /home/airflow/connections
           #  - name: logs
           #    mountPath: /home/airflow/logs
         - name: {{ .Chart.Name }}-scheduler
