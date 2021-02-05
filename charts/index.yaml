@@ -29,8 +29,8 @@ entries:
       url: https://github.com/thesuperzapper
     name: airflow
     sources:
-    - https://github.com/Tiqets/charts/tree/main/charts/airflow
+    - https://github.com/tiqets/charts/tree/main/charts/airflow
     urls:
-    - https://Tiqets.github.io/charts/airflow-7.16.0.tgz
+    - https://tiqets.github.io/charts/airflow-7.16.0.tgz
     version: 7.16.0
 generated: "2021-02-05T10:28:03.895518+01:00"
