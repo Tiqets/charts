@@ -183,6 +183,8 @@ spec:
           volumeMounts:
             - name: connections
               mountPath: /home/airflow/connections
+            - name: scripts
+              mountPath: /home/airflow/scripts
           #  - name: logs
           #    mountPath: /home/airflow/logs
         - name: {{ .Chart.Name }}-scheduler
@@ -265,7 +267,7 @@ spec:
               {{- end }}
               {{- if .Values.scheduler.initdb }}
                && echo "*** upgrading airflow db..." \
-               && airflow upgradedb || airflow db upgrade \
+               && airflow db upgrade \
               {{- end }}
               {{- if .Values.scheduler.variables }}
                && echo "*** adding Airflow variables..." \
