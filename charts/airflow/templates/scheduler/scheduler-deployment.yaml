@@ -173,9 +173,9 @@ spec:
           image: {{ .Values.airflow.image.officialRepository }}:{{ .Values.airflow.image.officialTag }}
           imagePullPolicy: {{ .Values.airflow.image.pullPolicy}}
           args: ["bash", "/clean-logs"]
-          volumeMounts:
-            - name: logs
-              mountPath: /home/airflow/logs
+          #volumeMounts:
+          #  - name: logs
+          #    mountPath: /home/airflow/logs
         - name: {{ .Chart.Name }}-scheduler
           image: {{ .Values.airflow.image.repository }}:{{ .Values.airflow.image.tag }}
           imagePullPolicy: {{ .Values.airflow.image.pullPolicy}}
