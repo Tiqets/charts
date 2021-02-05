@@ -225,7 +225,7 @@ spec:
                && pip install --user {{ range .Values.airflow.extraPipPackages }} {{ . | quote }} {{ end }} \
               {{- end }}
                && echo "*** running worker..." \
-               && exec airflow worker
+               && exec airflow celery worker
           ports:
             - name: wlog
               containerPort: 8793
