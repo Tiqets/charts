@@ -173,6 +173,11 @@ spec:
           image: {{ .Values.airflow.image.officialRepository }}:{{ .Values.airflow.image.officialTag }}
           imagePullPolicy: {{ .Values.airflow.image.pullPolicy}}
           args: ["bash", "/clean-logs"]
+          envFrom:
+            - configMapRef:
+                name: "{{ include "airflow.fullname" . }}-env"
+          env:
+            {{- include "airflow.mapenvsecrets" . | indent 12 }}
           #volumeMounts:
           #  - name: logs
           #    mountPath: /home/airflow/logs
