@@ -11,7 +11,7 @@ maintainers:
   - name: thesuperzapper
     url: https://github.com/thesuperzapper
 sources:
-  - https://github.com/airflow-helm/charts/tree/main/charts/airflow
+  - https://github.com/Tiqets/charts/tree/main/charts/airflow
 keywords:
   - airflow
   - dag

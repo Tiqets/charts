@@ -10,6 +10,8 @@ airflow:
     ## values: Always or IfNotPresent
     pullPolicy: IfNotPresent
     pullSecret: ""
+    officialRepository: apache/airflow
+    officialTag: 2.0.0
 
   ## the airflow executor type to use
   ##
