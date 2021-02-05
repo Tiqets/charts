@@ -112,7 +112,7 @@ spec:
               {{- if .Values.flower.oauthDomains }}
                && exec airflow flower --auth={{ .Values.flower.oauthDomains | quote }}
               {{- else }}
-               && exec airflow flower
+               && exec airflow celery flower
               {{- end }}
 
           livenessProbe:
